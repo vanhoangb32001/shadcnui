@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Calendar } from "@/components/ui";
+import { Calendar } from "@/components/ui/calendar";
 import { vi } from "date-fns/locale";
 
 export default function DatePickerInline({ onDateChange, defaultDate }) {
@@ -8,11 +8,11 @@ export default function DatePickerInline({ onDateChange, defaultDate }) {
 
   const handleSelect = (selectedDate) => {
     setDate(selectedDate);
-    onDateChange && onDateChange(selectedDate);
+    onDateChange?.(selectedDate);
   };
 
   return (
-    <div>
+    <div className="inline-block rounded-2xl border border-gray-200 shadow-md bg-white p-4">
       <Calendar
         mode="single"
         selected={date}
@@ -21,7 +21,7 @@ export default function DatePickerInline({ onDateChange, defaultDate }) {
         captionLayout="dropdown-buttons"
         fromYear={1900}
         toYear={2025}
-        className="border-none"
+        className="rounded-xl"
       />
     </div>
   );
