@@ -55,7 +55,7 @@ export default function DatePickerDropdown({ onDateChange, defaultDate }) {
   }, [day, month, year]);
 
   return (
-    <div className="flex w-full gap-10">
+    <div className="flex w-auto gap-10">
       <Select value={day} onValueChange={setDay}>
         <SelectTrigger className="w-[100px]">
           <SelectValue placeholder="Ngày" />
